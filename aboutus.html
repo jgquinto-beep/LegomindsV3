@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legominds</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Imagesv3\LMlogo.gif" type="icon">
+</head>
+<header class="navbar">
+    <!--Nav-->
+        <a href="Homepage.html" class="lmlogo"><img src="Imagesv3\LMlogo.gif"></a>
+        <a href="Homepage.html" class="hmbutton"><img src="Imagesv3\homebutton.png"></a>
+        <div class="navsclt">
+            <a href="favourites.html" class="navspecial">Favourites</a>
+            <a href="discover.html" class="navcont">Discover</a>
+            <a href="howtouse.html" class="navcont">Help</a>
+        </div>
+</header>
+
+<body>
+
+    <!--Welcome bit-->
+    <div class="abtus_carousel">
+        <div class="discoverbg abtus_carouselactive">
+            <img src="Imagesv3\Discover\page1discover.jpg">
+            <p>
+                Welcome to LEGO Minds!<br>
+                <span>
+                The ultimate place for LEGO fans to discover
+                fun facts and hidden detailsabout your favorite 
+                sets – from LEGO Batman to Star Wars, Jurassic World, and more!
+                </span>
+            </p>
+        </div>
+
+        <div class="discoverbg">
+            <img src="Imagesv3\Discover\page2discover.png">
+            <p style="color: black;">
+                Explore LEGO Trivia<br>
+                <span style="color: black;">
+                    Find cool stories, design secrets, 
+                    and interesting facts behind the LEGO sets you love.
+                </span>
+            </p>
+        </div>
+
+        <div class="discoverbg">
+            <img src="Imagesv3\Discover\page3discover.png">
+            <p>
+                Why We're Unique? <br>
+                <span>
+                    We go beyond the bricks to bring you the stories, 
+                    characters, and design details that make each LEGO set special.
+                </span>
+            </p>
+        </div>
+
+        <div class="abtus_carousel-buttons">
+            <button id="abtus_prev" ><</button>
+            <button id="abtus_next">></button>
+        </div>
+    </div>
+
+    <div class="abtuscontainer">
+    <div class="abtuscontainerbox">
+        <div class="abtuscontainerbox_redbox">
+            <div class="abtuscontainerbox_redboximgcont">
+                <a href="goal.html"><img src="Imagesv3\goal.png"></a>
+        </div>
+            <a href="goal.html"><h1>GOALS</h1></a>
+        </div>
+        
+        <div class="abtuscontainerbox_redbox">
+            <div class="abtuscontainerbox_redboximgcont">
+                <a href="ourteam.html"><img src="Imagesv3\ourteam.png" style="scale: 1.5; margin-top: -50px; margin-bottom: 70px; "></a>
+            </div>
+            <a href="ourteam.html"><h1>OUR TEAM</h1></a>
+        </div>
+
+
+        <div class="abtuscontainerbox_redbox">
+            <div class="abtuscontainerbox_redboximgcont">
+                <a href="faqs.html"><img src="Imagesv3\faq.png"></a>
+            </div>
+            <a href="faqs.html"><h1>FAQS</h1></a>
+        </div>
+    </div>
+
+        <div class="abtuscontainer_yellow"></div>
+    </div>
+
+    <div class="abtusbbcontainer">
+        <div class="abtusborderedtext">
+            <p>LEGO MINDS <br>
+                <span>
+                    BUILD TOGETHER - BOND TOGETHER
+                </span>
+            </p>
+
+        </div>
+
+        <div class="abtustext2">
+            <p>
+                Our website inspires you to set aside screen time and 
+                embrace <br>the creativity of Lego. Create amazing designs 
+                with family and friends while having fun and connecting.
+            </p>
+    
+        </div>
+
+        <div class="abtustext3">
+            <p>
+                Lego Minds offers something for everyone. Discover <span>themed collections</span>,  
+                creative build ideas, and educational resources that bring out the builder 
+                in everyone. Dive into the history, fun facts, and innovations behind the 
+                beloved bricks, and get inspired by the countless ways Lego fuels creativity 
+                for all ages.﻿
+            </p>
+        </div>
+
+    </div>
+
+    <!--SCRIPTS!!-->
+        <script>    
+            var slides = document.querySelectorAll('.discoverbg'); //get all discoverbg containers and see them as slides
+            var currentslide = 0; //start at slide 1 index 0
+        
+            function showSlide(index){ //showslide function specifically for carosel. index automatically consider slides as individual indexes
+                for(var i = 0; i < slides.length; i++){ //show the slides one by one by doing a loop. .lenght to calculate the lenght of slides
+                    if (i == index){ //if the loop (i) is equal to the current slide [index] show that slide
+                        slides[i].classList.add('abtus_carouselactive') //slides[i].classList.add add a class to the classlist of an element
+                    }//this makes the slides to be shown one by one
+                    else {
+                        slides[i].classList.remove('abtus_carouselactive')//slides[i].classList.remove remove a class to the classlist of an element
+                    }
+                }
+            }
+            
+            function autoChangeSlide() {
+                // Increment the currentIndex
+                currentslide++;
+              
+                // If we reach the end of the slides, loop back to the first slide
+                if (currentslide >= slides.length) {
+                    currentslide = 0; // Reset to 0 to loop to the first slide
+                }
+              
+                // Show the next slide
+                showSlide(currentslide);
+              }
+              
+              // Call autoChangeSlide every 3 seconds (3000 milliseconds)
+              var slideInterval = setInterval(autoChangeSlide, 3000);
+              
+              // Optional: Stop automatic slideshow on user interaction (e.g., mouse hover or click)
+              document.querySelector('.abtus_carousel').addEventListener('mouseenter', function() {
+                clearInterval(slideInterval); // Stop the auto-changing when hovering over the carousel
+              });
+              
+              document.querySelector('.abtus_carousel').addEventListener('mouseleave', function() {
+                slideInterval = setInterval(autoChangeSlide, 3000); // Restart auto-change after hover
+              });
+        
+            //get the button id's by their id
+            var previous = document.getElementById('abtus_prev');
+            var next = document.getElementById('abtus_next');
+        
+            previous.addEventListener('click', function() { //add an event lister for when clicked, the next slide shows up
+                if (currentslide > 0) {//if the current slide is > 0
+                    currentslide--;//then currentslide will decrement bringing the previous slide back
+                } 
+                else {
+                    currentslide = slides.length - 1; //if the current first condition turns false, the slide will go to the last slide[2]
+                }
+            showSlide(currentslide)//call this function to update the carousel every each click
+            });
+        
+            next.addEventListener('click', function() { //add an event lister for when clicked, the next slide shows up
+                if (currentslide < slides.length - 1) {//if the currentslide not the final slide or currentslide[2]
+                    currentslide++;//then currentslide will increment bringing the next slide forward
+                } 
+                else {
+                    currentslide = 0; //if the currentslide is the final slide or currentslide[2] then just set the currentslide backt to the first one
+                    //by setting currentslide index to 0
+                }
+            showSlide(currentslide)//call this function to update the carousel every each click
+            });
+        
+        
+        </script>
+</body>
+
+<!--footer disclaimer!-->
+<footer class="themedfooter" style="background-image: linear-gradient(to right,#ff3131, #ff914d);">
+    <p>Credit to official LEGO. All rights reserved by the original owner.</p>
+</footer>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="loginstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Details</h1>
+        <div class="details">
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Password:</strong> <span id="user-password"></span></p>
+        </div>
+        <button onclick="welcome()" class="btn">Welcome!</button>
+    </div>
+    <script>
+        // Retrieve user details from localStorage
+        document.getElementById('user-email').textContent = localStorage.getItem('userEmail');
+        document.getElementById('user-password').textContent = localStorage.getItem('userPassword');
+        const signin = document.getElementById('signin');
+        if (signin) {
+            signin.remove();
+        }
+        // Function to return to the sign-in page
+        function welcome() {
+            window.alert("Welcome to LegoMinds!");
+            window.location.href = 'Homepage.html';
+        }
+    </script>
+</body>
+</html>

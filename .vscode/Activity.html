@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Details</title>
+
+    <style>
+        body{
+            margin: 100px auto;
+            max-width: 1000px;
+            align-items: Center;
+            font-family: Comic Sans MS, cursive, sans-serif;
+            font-size: 15px;
+            color: aliceblue;
+        }
+
+        .memberContainer{
+            margin: auto;
+            max-width: 300px;
+            padding: 2%;
+            background-color: rgb(254, 57, 8);
+        }
+        h3{
+            margin: 20px;
+        }
+        .memberContainer input{
+            border-radius: 3px;
+            border-width: 1px;
+            border-color: rgb(254, 233, 78);
+            padding: 3px;
+        }
+        .inputGroupname{
+            margin-right: 15px;
+            text-align: center;
+        }
+        #groupName{
+            width: 100%;
+        }
+        .memberNames{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-weight: bold;
+        }
+        .memberNames input{
+            width: 90%;
+            margin-right: 5px;
+            height: 20px;
+        }
+        button{
+            width: 100%;
+            margin: 20px auto;
+            height: 30px;
+            background-color: rgb(8, 140, 249);
+            border-radius: 3px;                   
+            color: rgb(255, 253, 240);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="memberContainer"> 
+            <!--title header-->
+        <h1 align="center">Group</h1> 
+        
+            <!--group name-->
+        <div class="inputGroupname">
+            <input id="groupName" type="text" value= "Group Name" style="height: 30px; text-align: center;" > 
+        </div>
+        
+            <!--members-->
+        <h3 align="center">Members</h3>
+
+        
+        <div class="memberNames"> 
+            <div>
+                1 <input type="text" id="member1" value=" Name of member"><br>
+            </div>
+            <div>
+                2 <input type="text" id="member2" value=" Name of member"><br>
+            </div>
+            <div>
+                3 <input type="text" id="member3" value=" Name of member"><br>
+            </div>   
+        </div>
+
+        
+        <div class="buttons">
+            <!--display button-->
+            <button type="button" onclick="displayMember()" id="tisButton" value="display">
+                Display
+            </button>
+
+        </div>
+    </div>
+</body>
+    <script>
+        
+        
+         function displayMember(){
+            var gName="LegoMinds";
+            var member1="Tuyay, Irish Leyra";
+            var member2="Guevarra, Ma. Lean Joy";
+            var member3="Quinto, Jhon Arcel";
+
+            if(document.getElementById("tisButton").value=="display"){
+                document.getElementById("groupName").value=gName;
+                document.getElementById("member1").value=member1;
+                document.getElementById("member2").value=member2;
+                document.getElementById("member3").value=member3;
+
+                document.getElementById("tisButton").innerHTML="Clear";
+                document.getElementById("tisButton").value="clear";
+                window.alert("Displayed Member Details");
+            }
+
+            else if(document.getElementById("tisButton").value=="clear"){
+                document.getElementById("groupName").value= "Group Name";
+                document.getElementById("member1").value=" Name of member";
+                document.getElementById("member2").value=" Name of member";
+                document.getElementById("member3").value=" Name of member";
+             
+                document.getElementById("tisButton").value="display";
+                document.getElementById("tisButton").innerHTML="Display";
+                window.alert("Cleared Member Details");
+            }
+            
+        }
+
+   
+    </script>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act1_Surnames</title>
+</head>
+<style>
+    
+    body{
+        font-family: Comic Sans MS, cursive, sans-serif;
+        padding: 100px 0px;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to bottom, #ff3131, #ff914d);
+        overflow: hidden;
+    }
+
+    input{
+        padding-left: 10px;
+    }
+
+    #activitycontainer{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: 0px 30px;
+        width: 350px;
+        height: 500px;
+        border-radius: 30px;
+        background-color: white;
+        text-align: center;
+        align-items: center;
+        color: #ff3131;
+    }
+
+    #activitycontainer h1{
+        margin-top: 60px;
+    }
+
+    #activitycontainer input{
+        width: 250px;
+        height: 20px;
+        color: black;
+        border: 3px #ff3131 solid;
+    }
+
+    #displaybutton{
+        width: auto;
+        padding: 10px 60px;
+        margin: 40px auto;
+        height: auto;
+        background-color: rgb(8, 140, 249);
+        border-radius: 3px;                   
+        color: rgb(255, 253, 240);
+    }
+
+    #displaybutton:hover{
+        background-image: linear-gradient(to right, #ff3131, #ff914d);
+        transition: all 0.3s ease;
+        transform: scale(1.01);
+    }
+
+</style>
+<body>
+    <!--Main container-->
+    <main id="activitycontainer"> 
+        <h1>Group</h1>
+
+        <input type="text" id="groupname" placeholder="Group Name" style="text-align:center;">
+
+        <h2>Members</h2>
+
+        <!--Main container-->
+
+            <label for="member_one"> 1 
+                <input type="text" id="member_one" placeholder="Group Member">
+            </label><br>
+
+            <label for="member_two"> 2 
+                <input type="text" id="member_two" placeholder="Group Member">
+            </label><br>
+
+            <label for="member_three"> 3 
+                <input type="text" id="member_three" placeholder="Group Member">
+
+        <!--add onclick event to button-->
+        <button id="displaybutton" value="display" onclick="displaybutton()">Display</button>
+        </main>
+    
+        <!--Java Script-->
+    <script>
+        /*apply a function to the onclick event*/
+        function displaybutton(){
+            
+            /*assign value of "displaybutton" to a variable to be used in condition*/
+            var displaybutton = document.getElementById("displaybutton").value;
+            if(displaybutton == "display"){  /*if true, will place a value to the id's defined*/
+                document.getElementById("groupname").value= "LEGOMINDS"
+                document.getElementById("member_one").value= "Tuyay, Irish Leyra"
+                document.getElementById("member_two").value= "Guevarra, Ma. Lean Joy"
+                document.getElementById("member_three").value= "Quinto, Jhon Arcel"
+                
+                document.getElementById("displaybutton").innerHTML = "Hide" /*change the text on "displaybutton" to Hide*/
+                document.getElementById("displaybutton").value = "Hide" /*change the value to "hide"*/
+                window.alert("Show Group Details"); /*Show alert*/
+            }
+
+            if (displaybutton == "Hide") { /*if true, then it will clear the value of the id's defined*/
+                document.getElementById("groupname").value= ""
+                document.getElementById("member_one").value= ""
+                document.getElementById("member_two").value= ""
+                document.getElementById("member_three").value= ""
+                
+                document.getElementById("displaybutton").innerHTML = "Display" /*change the text on "displaybutton" to Display*/
+                document.getElementById("displaybutton").value = "display" /*change the value back to "display"*/
+                window.alert("Group Details Hidden"); /*Hide alert*/
+            }
+        }
+        
+    </script>
+</body>
+</html>
